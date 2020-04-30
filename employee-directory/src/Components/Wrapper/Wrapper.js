@@ -6,8 +6,8 @@ import EmployeeContentBox from '../EmployeeContentBox/EmployeeContentBox';
 const Wrapper = (props) => {
     return (
         <div className ={props.class}>
-            <EmployeeContentBox />
-            <EmployeeImg />
+            <EmployeeContentBox employeeInfo = {props.singleEmployee}/>
+            <EmployeeImg src={props.singleEmployee.img}/>
         </div>
     )
 }

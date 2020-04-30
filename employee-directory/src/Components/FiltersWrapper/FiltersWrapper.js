@@ -9,7 +9,7 @@ const FiltersWrapper = (props) => {
             <h4>Enter a name or position to filter employees</h4>
             <FilterInput placeholder='Enter name' handleChange={props.handleName}/>
             <FilterInput placeholder='Enter position' handleChange={props.handlePosition}/>
-            <EmployeeList employees={props.employees}/>
+            <EmployeeList employees={props.employees} handleClick={props.handleClick}/>
         </div>
     )
 }

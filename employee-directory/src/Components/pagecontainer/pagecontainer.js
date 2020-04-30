@@ -7,6 +7,15 @@ const PageContainer = (props) => {
     const [nameFilter, setNameFilter] = useState();
     const [positionFilter, setPositionFilter] = useState();
     const [employees, setEmployees] = useState([...props.employeesArr]);
+    const [employeeInfo, setEmployeeInfo] = useState({
+    id: '',
+    name: '',
+    position: '',
+    startDate: '',
+    salary: '',
+    img: '',
+    department: ''
+    });
     
 
     
@@ -37,10 +46,23 @@ const PageContainer = (props) => {
         }
     },[nameFilter, positionFilter])
 
+    const handleItemClick = (event) => {
+        const id = parseInt(event.target.getAttribute('data-id'));
+        let index = 0;
+        for(let i = 0; i < props.employeesArr.length; i++){
+            console.log(props.employeesArr[i].id);
+            if(props.employeesArr[i].id === id){
+                index = props.employeesArr[i].id - 1;
+                break;
+            }
+        }
+        setEmployeeInfo(props.employeesArr[index]);
+    }
+
     return (
         <div className='container'>
-            <FiltersWrapper employees ={employees} handleName={e => setNameFilter(e.target.value)} handlePosition={e => setPositionFilter(e.target.value)}/>
-            <Wrapper class='single-employee-wrapper'/>
+            <FiltersWrapper employees ={employees} handleName={e => setNameFilter(e.target.value)} handlePosition={e => setPositionFilter(e.target.value)} handleClick={handleItemClick}/>
+            <Wrapper class='single-employee-wrapper' singleEmployee = {employeeInfo}/>
         </div>
     )
 }

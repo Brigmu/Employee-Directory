@@ -6,15 +6,15 @@ export const ContentBoxRow1 = (props) => {
         <div className='row'>
             <div className='info'>
                 <h2>Id:</h2>
-                <p>Test</p>
+                <p>{props.employeeInfo.id}</p>
             </div>
             <div className='info'>
                 <h2>Name:</h2>
-                <p>Test</p>
+                <p>{props.employeeInfo.name}</p>
             </div>
             <div className='info'>
                 <h2>Position:</h2>
-                <p>Test</p>
+                <p>{props.employeeInfo.position}</p>
             </div>
             {/* <h2>Name</h2>
             <h2>Position</h2> */}
@@ -27,15 +27,15 @@ export const ContentBoxRow2 = (props) => {
         <div className='row'>
             <div className='info'>
                 <h2>Start Date:</h2>
-                <p>Test</p>
+                <p>{props.employeeInfo.startDate}</p>
             </div>
             <div className='info'>
                 <h2>Salary:</h2>
-                <p>Test</p>
+                <p>{props.employeeInfo.salary}</p>
             </div>
             <div className='info'>
                 <h2>Department:</h2>
-                <p>Test</p>
+                <p>{props.employeeInfo.department}</p>
             </div>
             {/* <h2>Start Date</h2>
             <h2>Salary</h2>

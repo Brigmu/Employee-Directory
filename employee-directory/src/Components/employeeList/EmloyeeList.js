@@ -7,7 +7,7 @@ const EmployeeList = (props) => {
     return (
         <ul className = 'employee-list'>
             {props.employees.map(item => (
-                <EmployeeListItem id={item.id} employee={item}/>
+                <EmployeeListItem id={item.id} employee={item} handleClick={props.handleClick}/>
             ))}
         </ul>
     )
